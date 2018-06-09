@@ -1,0 +1,33 @@
+Body{
+    /* background-color: #b9e2f1; */
+    background-color: #e7c03d;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+}
+
+.carousel-img {
+    width: 1200px;
+    height: 550px;
+}
+
+.card-header {
+    background-color: #000;
+    color: #ffffff;
+}
+
+.card-body {
+    background-color: #e9c757;
+    color: #272727;
+
+}
+
+.navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
+    color: #fff;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #ffff;
+}
