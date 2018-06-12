@@ -14,29 +14,33 @@ $(document).ready(function(){
 // variable for database
   var database = firebase.database();
 
-// initial variables
-  var name = "";
-  var dest = "";
-  var firstTrain = "";
-  var frequency = "";
+  var trainName = "";
+  var destination = "";
+  var firstTrain = 0;
+  var frequency = 0;
 
-
-  // onclick event to add new trains
-  $("#addTrain-btn").on("click", function(){
-    // keeps the page from default behavior
+  $("#submit").on("click", function(event) {
     event.preventDefault();
 
-    // Code in the logic for storing and retrieving the most recent user.
-    name = $("#trainName-input").val().trim();
-    dest = $("#trainDest-input").val().trim();
-    firstTrain = $("#trainTime-input").val().trim();
-    frequency = $("#trainFreq-input").val().trim();
+    trainName = $("#trainName").val().trim();
+    destination = $("#destination").val().trim();
+    firstTrain = $("#firstTrain").val().trim();
+    frequency = $("#frequency").val().trim();
 
-    // initial data to your Firebase database.
+    database.ref().push({
+      trainName: trainName,
+      destination: destination,
+      firstTrain: firstTrain,
+      frequency: frequency
 
-    database.ref().set();
+    });
 
+    $("#trainName").val("");
+    $("#destination").val("");
+    $("#firstTrain").val("");
+    $("#frequency").val("");
 
+    return false;
 
   });
 

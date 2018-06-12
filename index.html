@@ -11,10 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link rel="stylesheet" href="Assets/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="Assets/css/style.css" rel="stylesheet">
 
     <title>Train Scheduler</title>
 </head>
@@ -25,7 +25,7 @@
     <nav class="navbar navbar-expand-md navbar-light bg-dark sticky-top">
         <div class="container-fluid">
             <a href="#" class="navbar-brand">
-                <img class="logo" src="Assets/images/smile-train.png" alt="logo">
+                <img class="brand-logo" src="Assets/images/trainlogo.png" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
@@ -87,7 +87,7 @@
 
     </div>
 
-
+    <!-- cards and tables -->
     <div class="container-fluid">
 
         <div class="row">
@@ -111,14 +111,21 @@
                                 </tr>
                             </thead>
                             <tbody>
-
+                                <tr>
+                                    <td id="trainResult"></td>
+                                    <td id="destResult"></td>
+                                    <td id="freqResult"></td>
+                                    <td id="nextResult"></td>
+                                    <td id="minResult"></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
+    </div>
+    <div class="container-fluid padding">
         <div class="row">
             <div class="col-lg-12 mt-4">
 
@@ -134,31 +141,96 @@
                     <div class="card-body">
                         <form>
                             <div class="form-group row">
-                                <label for="trainName-input">Train Name</label>
-                                <input type="text" class="form-control" id="trainName-input">
+                                <label for="trainName">Train Name</label>
+                                <input type="text" class="form-control" id="trainName">
                             </div>
                             <div class="form-group row">
-                                <label for="trainDest-input">Destination</label>
-                                <input type="text" class="form-control" id="trainDest-input">
+                                <label for="destination">Destination</label>
+                                <input type="text" class="form-control" id="destination">
                             </div>
                             <div class="form-group row">
-                                <label for="trainTime-input">First Train Time (military time)</label>
-                                <input type="text" class="form-control" id="trainTime-input">
+                                <label for="firstTrain">First Train Time (military time)</label>
+                                <input type="text" class="form-control" id="firstTrain">
                             </div>
                             <div class="form-group row">
-                                <label for="trainFreq-input">Freqency (min)</label>
-                                <input type="text" class="form-control" id="trainFreq-input">
+                                <label for="frequency">Freqency (min)</label>
+                                <input type="text" class="form-control" id="frequency">
                             </div>
-                            <button class="btn btn-primary" id="addTrain-btn" type="submit">Submit</button>
+                            <button class="btn btn-primary" id="submit" type="submit">Submit</button>
+                            <button class="btn btn-primary" id="clear" type="submit">Clear</button>
 
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- end container -->
     </div>
+    <!--- Connect -->
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-12">
+                <h2>Connect</h2>
+            </div>
+            <div class="col-12 social padding">
+                <a href="#">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-google-plus-g"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <!--- Footer -->
+    <footer>
+        <div class="container-fluid padding">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <hr class="light">
+                    <p>555-555-5555</p>
+                    <p>email@example.com</p>
+                    <p>100 street name</p>
+                    <p>City, State, 00000</p>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Contact hours</h5>
+                    <hr class="light">
+                    <P>24 hours a day</P>
+                </div>
+                <div class="col-md-4">
+                    <hr class="light">
+                    <h5>Contact hours</h5>
+                    <hr class="light">
+                    <p>City, State, 00000</p>
+                    <p>City, State, 00000</p>
+                    <p>City, State, 00000</p>
+                    <p>City, State, 00000</p>
+                </div>
+                <div class="col-lg-12">
+                    <hr class="light-100">
+                    <h5>&copy; top-6-artist.com</h5>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
 
     <script src="Assets/Javascript/app.js"></script>
 
