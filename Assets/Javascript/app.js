@@ -59,6 +59,8 @@ $(document).ready(function(){
     var currentTime = moment ();
     console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
 
+    var diffTime = moment().diff(moment(firstTrain))
+
   });
 
 
