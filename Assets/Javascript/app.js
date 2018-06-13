@@ -44,6 +44,23 @@ $(document).ready(function(){
 
   });
 
+  database.ref().on("child_added", function(childSnapshot,prevChildKey){
+
+    console.log(childSnapshot.val());
+
+    var train = childSnapshot.val().trainName;
+    var dest = childSnapshot.val().destination;
+    var ft = childSnapshot.val().firstTrain;
+    var freq = childSnapshot.val().frequency;
+
+    var firstTrainConverted = moment(ft, "HH:mm").subtract(1, "years");
+    console.log(firstTrainConverted);
+
+    var currentTime = moment ();
+    console.log("CURRENT TIME: " + moment(currentTime).format("HH:mm"));
+
+  });
+
 
 
 
