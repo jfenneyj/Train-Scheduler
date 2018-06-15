@@ -66,9 +66,11 @@ $(document).ready(function () {
     console.log(remainder);
 
     var minutesTillTrain = freq - remainder;
-    console.log("minutes till train: " + minutesTillTrain);
+    console.log("minutes till train: " + moment(minutesTillTrain).format("HH:mm"));
+    
+  
 
-    var nextTrain = moment().add(minutesTillTrain, "minutes");
+    var nextTrain = moment().add(minutesTillTrain, "minutes").format("hh:mm a");
     console.log("arrival time: " + moment(nextTrain).format("hh:mm"));
 
     console.log(train);
